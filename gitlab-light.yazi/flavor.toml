@@ -1,0 +1,187 @@
+# vim:fileencoding=utf-8:foldmethod=marker
+# GitLab Light — Yazi Flavor
+# Palette sourced from gitlab-nvim-theme (GitLab Light iTerm2 color scheme)
+
+# : Manager {{{
+
+[mgr]
+cwd = { fg = "#006CD8" }
+
+# Find
+find_keyword  = { fg = "#AF551D", bold = true, italic = true, underline = true }
+find_position = { fg = "#583CAC", bg = "reset", bold = true, italic = true }
+
+# Marker
+marker_copied   = { fg = "#0A7F3D", bg = "#0A7F3D" }
+marker_cut      = { fg = "#A31700", bg = "#A31700" }
+marker_marked   = { fg = "#00798A", bg = "#00798A" }
+marker_selected = { fg = "#AF551D", bg = "#AF551D" }
+
+# Count
+count_copied   = { fg = "#FAFAFF", bg = "#0A7F3D" }
+count_cut      = { fg = "#FAFAFF", bg = "#A31700" }
+count_selected = { fg = "#FAFAFF", bg = "#AF551D" }
+
+# Border
+border_symbol = "│"
+border_style  = { fg = "#D0D0E8" }
+
+# : }}}
+
+
+# : Tabs {{{
+
+[tabs]
+active   = { fg = "#FAFAFF", bg = "#006CD8", bold = true }
+inactive = { fg = "#006CD8", bg = "#EFEFFC" }
+
+# : }}}
+
+
+# : Mode {{{
+
+[mode]
+normal_main = { fg = "#FAFAFF", bg = "#006CD8", bold = true }
+normal_alt  = { fg = "#006CD8", bg = "#EFEFFC" }
+
+select_main = { fg = "#FAFAFF", bg = "#0A7F3D", bold = true }
+select_alt  = { fg = "#0A7F3D", bg = "#EFEFFC" }
+
+unset_main = { fg = "#FAFAFF", bg = "#583CAC", bold = true }
+unset_alt  = { fg = "#583CAC", bg = "#EFEFFC" }
+
+# : }}}
+
+
+# : Status bar {{{
+
+[status]
+overall   = { fg = "#585870" }
+sep_left  = { open = "", close = "" }
+sep_right = { open = "", close = "" }
+
+# Progress
+progress_label  = { fg = "#FAFAFF", bold = true }
+progress_normal = { fg = "#006CD8", bg = "#F0F0FA" }
+progress_error  = { fg = "#A31700", bg = "#F0F0FA" }
+
+# Permissions
+perm_sep   = { fg = "#A0A0C0" }
+perm_type  = { fg = "#006CD8" }
+perm_read  = { fg = "#AF551D" }
+perm_write = { fg = "#A31700" }
+perm_exec  = { fg = "#0A7F3D" }
+
+# : }}}
+
+
+# : Pick {{{
+
+[pick]
+border   = { fg = "#006CD8" }
+active   = { fg = "#583CAC", bold = true }
+inactive = {}
+
+# : }}}
+
+
+# : Input {{{
+
+[input]
+border   = { fg = "#006CD8" }
+title    = {}
+value    = {}
+selected = { reversed = true }
+
+# : }}}
+
+
+# : Completion {{{
+
+[cmp]
+border = { fg = "#006CD8" }
+
+# : }}}
+
+
+# : Tasks {{{
+
+[tasks]
+border  = { fg = "#006CD8" }
+title   = {}
+hovered = { fg = "#583CAC", underline = true }
+
+# : }}}
+
+
+# : Which {{{
+
+[which]
+mask            = { bg = "#EFEFFC" }
+cand            = { fg = "#0A7F3D" }
+rest            = { fg = "#585870" }
+desc            = { fg = "#583CAC" }
+separator       = "  "
+separator_style = { fg = "#A0A0C0" }
+
+# : }}}
+
+
+# : Help {{{
+
+[help]
+on      = { fg = "#0A7F3D" }
+run     = { fg = "#583CAC" }
+hovered = { reversed = true, bold = true }
+footer  = { fg = "#FAFAFF", bg = "#585870" }
+
+# : }}}
+
+
+# : Spotter {{{
+
+[spot]
+border   = { fg = "#006CD8" }
+title    = { fg = "#006CD8" }
+tbl_col  = { fg = "#0A7F3D" }
+tbl_cell = { fg = "#583CAC", bg = "#EFEFFC" }
+
+# : }}}
+
+
+# : Notify {{{
+
+[notify]
+title_info  = { fg = "#0A7F3D" }
+title_warn  = { fg = "#AF551D" }
+title_error = { fg = "#A31700" }
+
+# : }}}
+
+
+# : File-specific styles {{{
+
+[filetype]
+rules = [
+	# Images
+	{ mime = "image/*", fg = "#AF551D" },
+
+	# Media
+	{ mime = "video/*", fg = "#A31700" },
+	{ mime = "audio/*", fg = "#A31700" },
+
+	# Archives
+	{ mime = "application/{zip,rar,7z*,tar,gzip,xz,zstd,bzip*,lzma,compress,archive,cpio,arj,xar,ms-cab*}", fg = "#583CAC" },
+
+	# Documents
+	{ mime = "application/{pdf,doc,rtf,epub+zip}", fg = "#0A7F3D" },
+
+	# Virtual file system
+	{ mime = "vfs/{absent,stale}", fg = "#A0A0C0" },
+
+	# Fallback
+	{ url = "*", fg = "#303030" },
+	{ url = "*/", fg = "#006CD8" },
+]
+
+# : }}}
