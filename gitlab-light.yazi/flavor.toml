@@ -163,6 +163,9 @@ title_error = { fg = "#A31700" }
 
 [filetype]
 rules = [
+	# Source code, config, and text files (catches .ts, .lua, .toml, .yaml, .md, etc.)
+	{ mime = "text/*", fg = "#00798A" },
+
 	# Images
 	{ mime = "image/*", fg = "#AF551D" },
 
@@ -176,11 +179,18 @@ rules = [
 	# Documents
 	{ mime = "application/{pdf,doc,rtf,epub+zip}", fg = "#0A7F3D" },
 
+	# Data / structured config
+	{ mime = "application/{json,xml}", fg = "#AF551D" },
+
+	# Special files
+	{ mime = "*", is = "orphan", fg = "#A31700", bg = "#FAEAE8" },
+	{ mime = "*", is = "exec", fg = "#0A7F3D" },
+
 	# Virtual file system
 	{ mime = "vfs/{absent,stale}", fg = "#A0A0C0" },
 
-	# Fallback
-	{ url = "*", fg = "#303030" },
+	# Fallback — fg_alt (purple-gray) so unrecognized files still look themed
+	{ url = "*", fg = "#585870" },
 	{ url = "*/", fg = "#006CD8" },
 ]
 
