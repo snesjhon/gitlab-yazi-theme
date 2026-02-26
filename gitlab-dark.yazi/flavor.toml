@@ -202,10 +202,10 @@ title_error = { fg = "#F57F6C" }
 [filetype]
 rules = [
 	# Directories first — must precede text/* to avoid MIME false-match on macOS
-	{ url = "*/", fg = "#BFA5C0" },
+	{ url = "*/", fg = "#8B7AA0" },
 
 	# Source code, config, and text files (catches .ts, .lua, .toml, .yaml, .md, etc.)
-	{ mime = "text/*", fg = "#8B7AA0" },
+	{ mime = "text/*", fg = "#BFA5C0" },
 
 	# Images
 	{ mime = "image/*", fg = "#D99530" },
@@ -242,9 +242,9 @@ rules = [
 
 [icon]
 prepend_dirs = [
-	{ name = ".config", text = "", fg = "#BFA5C0" },
+	{ name = ".config", text = "", fg = "#8B7AA0" },
 	{ name = ".git",    text = "", fg = "#52B87A" },
-	{ name = ".github", text = "", fg = "#BFA5C0" },
+	{ name = ".github", text = "", fg = "#8B7AA0" },
 ]
 
 # : }}}
