@@ -202,7 +202,7 @@ title_error = { fg = "#F57F6C" }
 [filetype]
 rules = [
 	# Directories first — must precede text/* to avoid MIME false-match on macOS
-	{ url = "*/", fg = "#7FB6ED" },
+	{ url = "*/", fg = "#FFFFFF" },
 
 	# Source code, config, and text files (catches .ts, .lua, .toml, .yaml, .md, etc.)
 	# Use muted purple-gray so reversed selection gives a soft #BFA5C0 bar (not harsh cyan)
@@ -243,9 +243,9 @@ rules = [
 
 [icon]
 prepend_dirs = [
-	{ name = ".config", text = "", fg = "#7FB6ED" },
+	{ name = ".config", text = "", fg = "#FFFFFF" },
 	{ name = ".git",    text = "", fg = "#52B87A" },
-	{ name = ".github", text = "", fg = "#7FB6ED" },
+	{ name = ".github", text = "", fg = "#FFFFFF" },
 ]
 
 # : }}}
