@@ -2,6 +2,14 @@
 # GitLab Dark — Yazi Flavor
 # Palette sourced from gitlab-nvim-theme (Ghostty / iTerm2-Color-Schemes)
 
+# : App {{{
+
+[app]
+overall = { bg = "#28262B" }
+
+# : }}}
+
+
 # : Manager {{{
 
 [mgr]
@@ -29,11 +37,24 @@ border_style  = { fg = "#3E3C42" }
 # : }}}
 
 
+# : Indicator {{{
+
+[indicator]
+parent  = { reversed = true }
+current = { reversed = true }
+preview = { underline = true }
+
+# : }}}
+
+
 # : Tabs {{{
 
 [tabs]
 active   = { fg = "#28262B", bg = "#7FB6ED", bold = true }
 inactive = { fg = "#7FB6ED", bg = "#312F35" }
+
+sep_inner = { open = "", close = "" }
+sep_outer = { open = "", close = "" }
 
 # : }}}
 
@@ -56,14 +77,14 @@ unset_alt  = { fg = "#AD95E9", bg = "#312F35" }
 # : Status bar {{{
 
 [status]
-overall   = { fg = "#AEADA8" }
+overall   = { fg = "#AEADA8", bg = "#222025" }
 sep_left  = { open = "", close = "" }
 sep_right = { open = "", close = "" }
 
 # Progress
 progress_label  = { fg = "#28262B", bold = true }
-progress_normal = { fg = "#7FB6ED", bg = "#222025" }
-progress_error  = { fg = "#F57F6C", bg = "#222025" }
+progress_normal = { fg = "#7FB6ED", bg = "#3E3C42" }
+progress_error  = { fg = "#F57F6C", bg = "#3E3C42" }
 
 # Permissions
 perm_sep   = { fg = "#666666" }
@@ -71,6 +92,20 @@ perm_type  = { fg = "#7FB6ED" }
 perm_read  = { fg = "#D99530" }
 perm_write = { fg = "#F57F6C" }
 perm_exec  = { fg = "#52B87A" }
+
+# : }}}
+
+
+# : Confirm {{{
+
+[confirm]
+border    = { fg = "#7FB6ED" }
+title     = { fg = "#7FB6ED" }
+body      = {}
+list      = {}
+btn_yes   = { fg = "#52B87A" }
+btn_no    = { fg = "#F57F6C" }
+btn_labels = ["Yes", "No"]
 
 # : }}}
 
@@ -89,7 +124,7 @@ inactive = {}
 
 [input]
 border   = { fg = "#7FB6ED" }
-title    = {}
+title    = { fg = "#7FB6ED" }
 value    = {}
 selected = { reversed = true }
 
@@ -99,7 +134,9 @@ selected = { reversed = true }
 # : Completion {{{
 
 [cmp]
-border = { fg = "#7FB6ED" }
+border   = { fg = "#7FB6ED" }
+active   = { bg = "#5D5277" }
+inactive = {}
 
 # : }}}
 
@@ -108,8 +145,8 @@ border = { fg = "#7FB6ED" }
 
 [tasks]
 border  = { fg = "#7FB6ED" }
-title   = {}
-hovered = { fg = "#AD95E9", underline = true }
+title   = { fg = "#7FB6ED" }
+hovered = { bg = "#5D5277", bold = true }
 
 # : }}}
 
@@ -132,6 +169,7 @@ separator_style = { fg = "#666666" }
 [help]
 on      = { fg = "#52B87A" }
 run     = { fg = "#AD95E9" }
+desc    = { fg = "#7FB6ED" }
 hovered = { reversed = true, bold = true }
 footer  = { fg = "#28262B", bg = "#AEADA8" }
 
@@ -144,7 +182,7 @@ footer  = { fg = "#28262B", bg = "#AEADA8" }
 border   = { fg = "#7FB6ED" }
 title    = { fg = "#7FB6ED" }
 tbl_col  = { fg = "#52B87A" }
-tbl_cell = { fg = "#AD95E9", bg = "#312F35" }
+tbl_cell = { bg = "#5D5277" }
 
 # : }}}
 
@@ -163,6 +201,9 @@ title_error = { fg = "#F57F6C" }
 
 [filetype]
 rules = [
+	# Directories first — must precede text/* to avoid MIME false-match on macOS
+	{ url = "*/", fg = "#AD95E9" },
+
 	# Source code, config, and text files (catches .ts, .lua, .toml, .yaml, .md, etc.)
 	{ mime = "text/*", fg = "#32C5D2" },
 
@@ -183,15 +224,28 @@ rules = [
 	{ mime = "application/{json,xml}", fg = "#D99530" },
 
 	# Special files
-	{ mime = "*", is = "orphan", fg = "#F57F6C", bg = "#36191A" },
-	{ mime = "*", is = "exec", fg = "#52B87A" },
+	{ url = "*", is = "orphan", fg = "#F57F6C", bg = "#36191A" },
+	{ url = "*", is = "exec", fg = "#52B87A" },
+	{ url = "*", is = "dummy", fg = "#F57F6C", bg = "#36191A" },
 
 	# Virtual file system
 	{ mime = "vfs/{absent,stale}", fg = "#666666" },
 
-	# Fallback — fg_alt (muted warm gray) so unrecognized files still look themed
+	# Fallback
 	{ url = "*", fg = "#AEADA8" },
-	{ url = "*/", fg = "#7FB6ED" },
+]
+
+# : }}}
+
+
+# : Icons {{{
+
+[icon]
+prepend_conds = [{ if = "dir", text = "", fg = "#AD95E9" }]
+prepend_dirs = [
+	{ name = ".config", text = "", fg = "#AD95E9" },
+	{ name = ".git",    text = "", fg = "#32C5D2" },
+	{ name = ".github", text = "", fg = "#AD95E9" },
 ]
 
 # : }}}
