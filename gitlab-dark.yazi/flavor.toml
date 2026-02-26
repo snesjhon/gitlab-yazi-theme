@@ -202,10 +202,11 @@ title_error = { fg = "#F57F6C" }
 [filetype]
 rules = [
 	# Directories first — must precede text/* to avoid MIME false-match on macOS
-	{ url = "*/", fg = "#AD95E9" },
+	{ url = "*/", fg = "#7FB6ED" },
 
 	# Source code, config, and text files (catches .ts, .lua, .toml, .yaml, .md, etc.)
-	{ mime = "text/*", fg = "#32C5D2" },
+	# Use muted purple-gray so reversed selection gives a soft #BFA5C0 bar (not harsh cyan)
+	{ mime = "text/*", fg = "#BFA5C0" },
 
 	# Images
 	{ mime = "image/*", fg = "#D99530" },
@@ -215,7 +216,7 @@ rules = [
 	{ mime = "audio/*", fg = "#F88AAF" },
 
 	# Archives
-	{ mime = "application/{zip,rar,7z*,tar,gzip,xz,zstd,bzip*,lzma,compress,archive,cpio,arj,xar,ms-cab*}", fg = "#AD95E9" },
+	{ mime = "application/{zip,rar,7z*,tar,gzip,xz,zstd,bzip*,lzma,compress,archive,cpio,arj,xar,ms-cab*}", fg = "#F88AAF" },
 
 	# Documents
 	{ mime = "application/{pdf,doc,rtf,epub+zip}", fg = "#52B87A" },
@@ -242,9 +243,9 @@ rules = [
 
 [icon]
 prepend_dirs = [
-	{ name = ".config", text = "", fg = "#AD95E9" },
-	{ name = ".git",    text = "", fg = "#32C5D2" },
-	{ name = ".github", text = "", fg = "#AD95E9" },
+	{ name = ".config", text = "", fg = "#7FB6ED" },
+	{ name = ".git",    text = "", fg = "#52B87A" },
+	{ name = ".github", text = "", fg = "#7FB6ED" },
 ]
 
 # : }}}
