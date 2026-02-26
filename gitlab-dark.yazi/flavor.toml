@@ -205,8 +205,7 @@ rules = [
 	{ url = "*/", fg = "#BFA5C0" },
 
 	# Source code, config, and text files (catches .ts, .lua, .toml, .yaml, .md, etc.)
-	# Use muted purple-gray so reversed selection gives a soft #BFA5C0 bar (not harsh cyan)
-	{ mime = "text/*", fg = "#BFA5C0" },
+	{ mime = "text/*", fg = "#8B7AA0" },
 
 	# Images
 	{ mime = "image/*", fg = "#D99530" },
