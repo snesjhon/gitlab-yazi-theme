@@ -241,7 +241,6 @@ rules = [
 # : Icons {{{
 
 [icon]
-prepend_conds = [{ if = "dir", text = "", fg = "#583CAC" }]
 prepend_dirs = [
 	{ name = ".config", text = "", fg = "#583CAC" },
 	{ name = ".git",    text = "", fg = "#00798A" },
