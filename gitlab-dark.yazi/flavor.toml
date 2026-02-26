@@ -225,7 +225,6 @@ rules = [
 
 	# Special files
 	{ url = "*", is = "orphan", fg = "#F57F6C", bg = "#36191A" },
-	{ url = "*", is = "exec", fg = "#52B87A" },
 	{ url = "*", is = "dummy", fg = "#F57F6C", bg = "#36191A" },
 
 	# Virtual file system
