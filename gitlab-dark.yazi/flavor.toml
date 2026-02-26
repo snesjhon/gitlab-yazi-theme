@@ -230,8 +230,8 @@ rules = [
 	# Virtual file system
 	{ mime = "vfs/{absent,stale}", fg = "#666666" },
 
-	# Fallback
-	{ url = "*", fg = "#AEADA8" },
+	# Fallback — matches preview panel (no MIME) and any unrecognized files
+	{ url = "*", fg = "#BFA5C0" },
 ]
 
 # : }}}
